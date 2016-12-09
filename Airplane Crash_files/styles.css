@@ -1,0 +1,14 @@
+.row {
+  background-color: gray;
+  height: 40px;
+}
+
+.game {
+  background-color : red;
+  height: 40px;
+  border: 1px solid;
+
+}
+#airplane {
+  height: 40px;
+}
