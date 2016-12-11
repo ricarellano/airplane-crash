@@ -4,11 +4,31 @@
 }
 
 .game {
-  background-color : red;
+  background-color : white;
   height: 40px;
   border: 1px solid;
+  position: absolute;
+  padding: 0 !important;
 
 }
+/*.airplane {
+  background-image: url(../airplane.jpg) ;
+  background-size: 100px;
+
+      height:100px;
+      width:100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+  height: 40px;
+}*/
+
+
+
 #airplane {
   height: 25px;
+
+
+
 }
