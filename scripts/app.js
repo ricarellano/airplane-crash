@@ -23,6 +23,7 @@ $(document).ready( function() {
   var row = 4;
   var col = 0;
 
+$('.start').click(function (){
   async.eachSeries(matrix[row], function(element, callback) {
     setTimeout(function() {
       if (col != 0) {
@@ -38,6 +39,8 @@ $(document).ready( function() {
   }, function(err) {
     console.log("Terminó");
   });
+
+});
 
 
 
@@ -62,20 +65,23 @@ $(window).keydown(function(event){
 });
 
 
+var birds = [
+  matrix[4][6]
+];
 
 
 
+  function createBird (){
+    if ($('#airplane') === $('#47')){
 
-  function createBird (e){
-    // var random = Math.random();
-    board[4][6] = 1;
-    board[9][9] = 1;
-    console.log(e);
+      console.log("la cagaste");
 
+
+    }
   }
-  createBird();
+createBird ();
 
-  
+
 
 
 });
