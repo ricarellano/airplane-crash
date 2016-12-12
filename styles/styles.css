@@ -1,5 +1,10 @@
+body{
+  background-image: url(../city.jpg);
+  background-repeat: no-repeat;
+}
+
 .row {
-  background-color: gray;
+
   height: 40px;
 }
 
@@ -32,4 +37,12 @@
 
 #bird{
   height: 26px;
+}
+
+#explosion {
+  height: 35px;
+}
+
+#finish {
+  height: 35px;
 }
