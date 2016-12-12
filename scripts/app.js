@@ -6,6 +6,7 @@ $(document).ready( function() {
   var row;
   var col;
   var gameStarted = false;
+  $('#40').append('<img src="airplane1.png" alt="airplane" id="airplane">');
 
   // Functions
   function createMatrix() {
@@ -22,7 +23,7 @@ $(document).ready( function() {
   function createBirds() {
     var i = 0;
     var birds = [];
-    while (i < 5){
+    while (i < 10){
       var random = Math.random()*129;
       var birdRandom = Math.floor(random);
       if( birdRandom > 43 || birdRandom < 40){
@@ -31,7 +32,7 @@ $(document).ready( function() {
           birdRandom = "0" + birdRandom;
         }
         var position = '#' + birdRandom;
-        $(position).append('<img src="bird.jpg" alt="bird" id="bird">');
+        $(position).append('<img src="bird2.png" alt="bird" id="bird">');
         i++;
       }
     }
@@ -41,7 +42,7 @@ $(document).ready( function() {
     createMatrix();
     $(".container img").remove();
     createBirds();
-    $('#40').append('<img src="airplane.jpg" alt="airplane" id="airplane">');
+    $('#40').append('<img src="airplane1.png" alt="airplane" id="airplane">');
     row = 4;
     col = 1;
   }
@@ -79,7 +80,7 @@ $(document).ready( function() {
           var string = position + " img";
           $(string).remove();
           $(position).append('<img src="explosion.png" alt="explosion" id="explosion">');
-          return callback({message: "Crash"});
+          return callback({message: "Crash!"});
         }
 
         if (col != 0) {
@@ -88,7 +89,7 @@ $(document).ready( function() {
         }
         matrix[row][col] = true;
 
-        $(position).append('<img src="airplane.jpg" alt="airplane" id="airplane">');
+        $(position).append('<img src="airplane1.png" alt="airplane" id="airplane">');
 
 
         if(col === 9){
@@ -96,14 +97,14 @@ $(document).ready( function() {
           var string = position + " img";
           $(string).remove();
           $(position).append('<img src="finish.gif" alt="finish" id="finish">');
-          return callback({message: "Win"});
+          return callback({message: "You Win!"});
         }
         col++;
         callback();
       }, 700);
     }, function(result) {
       setTimeout(function() {
-        alert(result.message)
+        swal(result.message)
       }, 1000);
 
       gameStarted = false;
@@ -119,12 +120,12 @@ $(document).ready( function() {
         row--;
         $("#airplane").remove();
         var position = "#" + row + col;
-        $(position).append('<img src="airplane.jpg" alt="airplane" id="airplane">');
+        $(position).append('<img src="airplane1.png" alt="airplane" id="airplane">');
       }else if (event.keyCode === 40){
         row++;
         $("#airplane").remove();
         var position = "#" + row + col;
-        $(position).append('<img src="airplane.jpg" alt="airplane" id="airplane">');
+        $(position).append('<img src="airplane1.png" alt="airplane" id="airplane">');
       }
     }
   });
